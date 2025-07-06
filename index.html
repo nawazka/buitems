@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Excellence - Official Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0056b3; /* Dark blue */
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+        }
+
+        .logo h1 a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #d1ecf1; /* Lighter blue on hover */
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.7), rgba(0, 86, 179, 0.7)), url('https://via.placeholder.com/1500x600/007bff/ffffff?text=University+Campus+Image') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .hero h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: #28a745; /* Green */
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838; /* Darker green */
+            transform: translateY(-2px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        section h2 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0056b3;
+            font-size: 2.5em;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            color: #007bff; /* Light blue */
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .card p {
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .card .btn-secondary {
+            display: inline-block;
+            background-color: #6c757d; /* Grey */
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        .course-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .course-list ul li {
+            background-color: #e9ecef;
+            margin-bottom: 10px;
+            padding: 15px 20px;
+            border-left: 5px solid #007bff;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-list ul li strong {
+            color: #0056b3;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40; /* Dark grey */
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 0;
+    }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="#">Buitems Muslim Bagh</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#admissions">Admissions</a></li>
+                    <li><a href="#faculty">Faculty</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+             <img src="BUITEMS_logo.png"> 
+            <h2>Discover Your Future at Buitems Muslim Bagh</h2>
+            <p>Empowering minds, fostering innovation, and building leaders for tomorrow's world.</p>
+            <a href="#admissions" class="btn-primary">Apply Now</a>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Our University</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                     Buitems Muslim Bagh is dedicated to providing high-quality education and research opportunities. We pride ourselves on our innovative curriculum, state-of-the-art facilities, and a vibrant community that encourages academic and personal growth.
+                </p>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Our Mission</h3>
+                        <p>To cultivate intellectual curiosity, foster critical thinking, and inspire a lifelong commitment to learning and societal betterment.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Our Vision</h3>
+                        <p>To be a globally recognized institution renowned for its academic excellence, groundbreaking research, and significant contributions to humanity.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Why Choose Us?</h3>
+                        <p>Experienced faculty, diverse programs, excellent career prospects, and a supportive learning environment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="courses">
+            <div class="container">
+                <h2>Our Academic Programs</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                    We offer a wide range of undergraduate and postgraduate programs designed to equip students with the knowledge and skills needed to succeed in various fields.
+                </p>
+                <div class="course-list">
+                    <ul>
+                        <li>
+                            <strong>Computer Science</strong>
+                            <span>(B.Sc.)</span>
+                        </li>
+                        <li>
+                            <strong>Business Administration</strong>
+                            <span>(BBA)</span>
+                        </li>
+                          <li>
+                            <strong>Economics</strong>
+                            <span>(Bs)</span>
+                        </li>
+                        <li>
+                            <strong>Education</strong>
+                            <span>(Bs)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="#" class="btn-primary">View All Courses</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="admissions">
+            <div class="container">
+                <h2>Admissions</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                    Ready to join the  Buitems Muslim Bagh? Find out more about our admission requirements, application process, and important deadlines.
+                </p>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Undergraduate Admissions</h3>
+                        <p>Information for prospective undergraduate students, including entry requirements and application forms.</p>
+                        <a href="#" class="btn-secondary">Learn More</a>
+                    </div>
+                    <div class="card">
+                        <h3>Graduate Admissions</h3>
+                        <p>Details for postgraduate applicants, including program-specific criteria and research opportunities.</p>
+                        <a href="#" class="btn-secondary">Learn More</a>
+                    </div>
+                    <div class="card">
+                        <h3>Scholarships & Aid</h3>
+                        <p>Explore various scholarship opportunities and financial aid options available to our students.</p>
+                        <a href="#" class="btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faculty">
+            <div class="container">
+                <h2>Our Esteemed Faculty</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                    Our faculty members are leaders in their fields, dedicated to teaching, research, and mentoring the next generation of professionals.
+                </p>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Prof. Syed Ainullah Agha</h3>
+                        <p>Head of Computer Science Department. Specializes in AI & Machine Learning.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Prof. Mehmood Khan</h3>
+                        <p>Head of Education. Expertise in Educational psychology, Classroom Managment.</p>
+                    </div>
+                     <div class="card">
+                        <h3>Prof. Aimal khan</h3>
+                        <p>Head of Economics. Expertise in Analyze economic trends, contribute to policy discussions.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Prof. Abdul Rauf</h3>
+                        <p>Professor of Business Administration. Focus on Marketing and Strategic Management.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                    Have questions? Feel free to reach out to us. Our team is here to assist you.
+                </p>
+                <div class="contact-info">
+                    <p><strong>Address:</strong>University Road, Muslim Bagh,Pakistan</p>
+                    <p><strong>Phone:</strong> <a href="tel:+923328095833">+923337927810</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:aamir.shahab@buitems.edu.pk</a></p>
+                    <p><strong>Office Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Buitems Muslim Bagh. All rights reserved.</p>
+            <p>Designed with <span style="color: red;">&hearts;</span> for New and old12:24 AM 7/5/2025 students.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
